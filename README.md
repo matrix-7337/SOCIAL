@@ -43,3 +43,51 @@ if url:
     messagebox.showinfo("Success", f"QR Code saved to Desktop:\nqrcode.png")
 else:
     messagebox.showwarning("Cancelled", "No URL entered.")
+====================≠=========
+
+
+import qrcode
+
+
+import tkinter as tk
+
+
+from tkinter import simpledialog, messagebox
+
+
+import os
+
+
+
+root = tk.Tk()
+
+
+
+root.withdraw()
+
+
+url = simpledialog.askstring("QR Code Generator", "Enter the URL:")
+
+
+
+if url:
+    
+    img = qrcode.make(url)
+
+
+    desktop = os.path.join(os.path.expanduser("~"), "Desktop")
+   
+    
+    save_path = os.path.join(desktop, "qrcode.png")
+   
+    
+    img.save(save_path)
+
+  
+    messagebox.showinfo("Done", "QR Code saved to Desktop as qrcode.png")
+
+
+else:
+   
+    
+    messagebox.showwarning("No Input", "You did not enter a URL.")
