@@ -60,3 +60,18 @@ generate_button.pack(pady=20)
 
 
 root.mainloop()
+
+
+
+
+
+==========
+
+
+
+python - <<EOF
+import tkinter as tk
+root = tk.Tk()
+root.title("Test Window")
+root.mainloop()
+EOF
