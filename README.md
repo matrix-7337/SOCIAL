@@ -1,27 +1,16 @@
-# Daily Cybersecurity Resources and Roadmaps 📚
+import qrcode
+import os
 
-Welcome to this repository where resources, learning materials, and curated roadmaps are shared daily to help you grow your cybersecurity skills progressively.
+url = input("Enter URL: ")
 
-## Featured Roadmaps
+img = qrcode.make(url)
 
-Explore these comprehensive, community-trusted cybersecurity roadmaps to guide your learning journey:
+# Get your Windows username automatically
+windows_user = os.popen('cmd.exe /c "echo %USERNAME%"').read().strip()
 
-- [Cybersecurity Roadmap by Carl Castanas](https://github.com/carlcastanas/Cybersecurity-Roadmap?tab=readme-ov-file)  
-  A detailed, structured roadmap covering various cybersecurity domains, perfect for building a strong foundation.
+# Save directly on Windows Desktop
+path = f"/mnt/c/Users/{windows_user}/Desktop/qrcode.png"
 
-- [90 Days of CyberSecurity by Farhan Ashraf](https://github.com/farhanashrafdev/90DaysOfCyberSecurity?tab=readme-ov-file)  
-  A 90-day study plan with daily tasks covering Network+, Security+, Linux, Python, Traffic Analysis, Git, ELK, AWS, Azure, and ethical hacking topics.
+img.save(path)
 
-- [Defronix Cybersecurity Roadmap](https://github.com/defronixpro/Defronix-Cybersecurity-Roadmap)  
-  A resource updated regularly to provide hackers with daily cybersecurity learning content and tools.
-
-## What You Can Expect
-
-- Daily updated resources and guides.
-- Categorized and practical roadmaps.
-- Tools and scripts to sharpen your skills.
-- Community contributions and discussions.
-
----
-
-Stay connected for daily learning and evolve your cybersecurity skills with consistent progress!
+print(f"QR Code saved on your Windows Desktop as qrcode.png")
